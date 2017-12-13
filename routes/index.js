@@ -18,4 +18,15 @@ router.get('/foods', function (req, res, next) {
   })
 })
 
+/* GET single food item */
+router.get('/food/:id', (req, res, next) => {
+  var Item_ID = parseInt(req.params.id)
+  db.query('SELECT * FROM foods WHERE "Item_ID" = $1::int', [Item_ID], (err, res) => {
+    if (err) {
+      return next(err)
+    }
+    req.res.render('food', {food: res.rows[0]})
+  })
+})
+
 module.exports = router

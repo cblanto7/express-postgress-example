@@ -1,0 +1,16 @@
+extends layout
+
+block content
+	h1= 'food'
+	table
+		tr(style={'background-color': 'grey'})
+			th= 'Item_ID'
+			th= 'Item_Name'
+			th= 'Item_Unit'
+			th= 'Company_ID'
+		tr
+			td= food.Item_ID
+			td= food.Item_Name
+			td= food.Item_Unit
+			td= food.Company_ID
+

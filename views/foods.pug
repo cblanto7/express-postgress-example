@@ -1,9 +1,9 @@
 extends layout
 
 block content
-  h1= 'foods'
-  ul
-  each food in foods
-    li= food.Item_Name
-  else
-    li There are no values
+	h1= 'foods'
+	ul
+		each food in foods
+			li= food.Item_Name
+		else
+			li There are no values
